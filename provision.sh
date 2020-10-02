@@ -16,7 +16,7 @@ net.bridge.bridge-nf-call-iptables = 1
 EOF
 sysctl --system
 
-swapoff -a && sed -i '/ swap / s/^/#/' /etc/fstab
+swapoff -a && sed -i '/swap/s/^/#/' /etc/fstab
 
 systemctl enable docker && systemctl start docker
 systemctl enable kubelet && systemctl start kubelet

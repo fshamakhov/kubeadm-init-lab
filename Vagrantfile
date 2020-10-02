@@ -1,7 +1,7 @@
-WORKERS = 3
+WORKERS = 2
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "ubuntu/focal64"
 
   def create_kube_host(config, hostname, ip, cpus, memory)
     config.vm.define hostname do |host|
@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
   end
 
   # create controller
-  create_kube_host(config, "controller-0", "192.168.55.10", 2, 4096)
+  create_kube_host(config, "master", "192.168.55.10", 2, 2048)
 
   # create workers
   for h in 0..WORKERS-1

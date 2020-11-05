@@ -7,7 +7,7 @@ deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 
 apt-get update
-apt-get install -y docker.io kubelet kubeadm kubectl
+apt-get install -y docker.io kubelet kubeadm kubectl nfs-common
 apt-mark hold kubelet kubeadm kubectl
 
 cat <<EOF > /etc/sysctl.d/k8s.conf

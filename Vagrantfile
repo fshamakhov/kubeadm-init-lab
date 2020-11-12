@@ -1,3 +1,6 @@
+# -*- mode: ruby -*-
+# # vi: set ft=ruby :
+
 WORKERS = 2
 
 Vagrant.configure("2") do |config|

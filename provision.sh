@@ -20,3 +20,10 @@ swapoff -a && sed -i '/swap/s/^/#/' /etc/fstab
 
 systemctl enable docker && systemctl start docker
 systemctl enable kubelet && systemctl start kubelet
+
+cat <<EOF >> /etc/hosts
+192.168.55.1 nfs-server.k8s
+192.168.55.10 controller-0
+192.168.55.20 worker-0
+192.168.55.21 worker-1
+EOF
